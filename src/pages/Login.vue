@@ -55,13 +55,13 @@
   const signIn = async() => {
     try{
       await setPersistence(auth, browserLocalPersistence);
-      const res = await signInWithEmailAndPassword(auth, email.value, password.value);
+      await signInWithEmailAndPassword(auth, email.value, password.value);
       console.log('Successful sign-in!');
       router.push('/Home');
     }
     catch(error) {
       console.log("reached catch")
-      alert(error.message);
+      alert(error);
     }
   }
   

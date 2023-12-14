@@ -130,7 +130,7 @@
     import { defineProps } from 'vue';
     import {getAuth,signOut} from 'firebase/auth';
 
-    const props = defineProps(['isDefaultView','isLoginView']);
+    defineProps(['isDefaultView','isLoginView']);
     const cartItemCount = useCartStore();
     const auth = getAuth();
     const logOut = async() => {
@@ -139,8 +139,7 @@
         console.log('sign out successful');
         router.push('/login');
       } catch (error) {
-        console.log(error.message);
-        alert(error.message);
+        alert(error);
       }
     };
 </script>
