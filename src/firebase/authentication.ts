@@ -28,6 +28,7 @@ onAuthStateChanged(auth, async(user) => {
     // userStore.setUser(currentUser);
   }else{
     console.log('User is signed out');
+    router.push('/login');
   }
 });
 export {app, auth};

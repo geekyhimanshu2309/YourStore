@@ -60,7 +60,6 @@
       router.push('/Home');
     }
     catch(error) {
-      debugger;
       console.log("reached catch")
       alert(error.message);
     }
