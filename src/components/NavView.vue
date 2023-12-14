@@ -114,7 +114,7 @@
                 <span class="badge">New</span>
               </a>
             </li>
-            <li><a @click="signOut">Logout</a></li>
+            <li><a @click="logOut">Logout</a></li>
           </ul>
         </div>
       </div>
@@ -128,12 +128,20 @@
     import { useCartStore } from '../store/cart.ts';
     import router from '../router';
     import { defineProps } from 'vue';
+    import {getAuth,signOut} from 'firebase/auth';
 
     const props = defineProps(['isDefaultView','isLoginView']);
     const cartItemCount = useCartStore();
-
-    const signOut = async() => {
-      router.push('/login');
-    }
+    const auth = getAuth();
+    const logOut = async() => {
+      try {
+        await signOut(auth);
+        console.log('sign out successful');
+        router.push('/login');
+      } catch (error) {
+        console.log(error.message);
+        alert(error.message);
+      }
+    };
 </script>
 
