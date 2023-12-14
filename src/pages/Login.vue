@@ -1,4 +1,5 @@
 <template>
+  <NavView :isLoginView="true"/>
   <div>
       <div class="min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
           <div class="sm:mx-auto sm:w-full sm:max-w-sm">
@@ -46,6 +47,7 @@
   import { signInWithEmailAndPassword,setPersistence,browserLocalPersistence } from 'firebase/auth';
   import router from '../router';
   import {auth } from '../firebase/authentication';
+  import NavView from '../components/NavView.vue';
   const email = ref('');
   const password = ref('');
   
