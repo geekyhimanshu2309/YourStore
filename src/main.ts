@@ -9,13 +9,12 @@ import { auth } from './firebase/authentication';
 
 const app = createApp(App);
 const pinia = createPinia();
-
-app.config.globalProperties.$auth = auth;
-
-
-app.use(router);
 app.use(pinia);
 
 usePersistCart();
+
+app.use(router);
+
+app.config.globalProperties.$auth = auth;
 
 app.mount('#app');

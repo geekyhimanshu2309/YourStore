@@ -1,30 +1,20 @@
-import {defineStore} from "pinia";
-import {ref} from "vue";
+// import {defineStore} from "pinia";
+// import {ref} from "vue";
 
-export const useUserStore = defineStore("userStore",()=>{
-    const user = ref<any>(null);
-    const userIdToken = ref<any>();
-    const FirebaseUserId = ref<any>();
+// export const useUserStore = defineStore("userStore", () => {
+//     const user = ref<any>(null);
 
-    function setUser(whyareweusingthis: any){
-        user.value = whyareweusingthis;
-    }
+//     const setUser = ( newUser ) => {
+//         user.value = newUser;
+//     }
 
-    function setUserIdToken(token: any){
-        userIdToken.value = token;
-    }
-    function setFirebaseUserId(id: any){
-        FirebaseUserId.value = id;
-    }
+//     const clearUser = () => {
+//         user.value = null;
+//     }
 
-    return {
-        user,
-        userIdToken,
-        FirebaseUserId,
-        setUser,
-        setUserIdToken,
-        setFirebaseUserId,
-    };
-});
-
-export default useUserStore;
+//     return {
+//         user,
+//         setUser,
+//         clearUser
+//     }
+// });

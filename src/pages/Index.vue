@@ -1,6 +1,6 @@
 <template>
     <div>
-        <NavView />
+        <NavView :isDefaultView="true"/>
         <ItemList/>
     </div>
 </template>
